@@ -27,18 +27,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MyHomePage extends StatelessWidget {
 
-  
+  var nameController=TextEditingController();
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
    
@@ -47,15 +39,37 @@ class _MyHomePageState extends State<MyHomePage> {
 
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
     
-        title: Text(widget.title),
+        title: Text('Home'),
       ),
-      body:Center(
-        child: Container(
-          width: 200,
-          height: 200,
-          color: Colors.amber,
-        ),
-      )
+      body:
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+           
+            children: [
+              Text('Welcome',style: TextStyle(
+                fontSize: 34,
+                fontWeight: FontWeight.bold,
+              ),),
+              SizedBox(
+                height:11,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                child: TextField(
+                  controller: nameController,
+                ),
+              ),
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder:(context){
+           return Intropage(nameController.text.toString());;
+                }, ));
+              }, child: Text('next'))
+            ],
+          
+        
+      ),
+    
     );
   }
 }

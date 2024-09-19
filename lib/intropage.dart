@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_first_app/main.dart';
 
 class Intropage extends StatelessWidget {
+  var nameFromeHome;
+  Intropage(this.nameFromeHome);
   @override
   Widget build(BuildContext context) {
     return  Scaffold(appBar: AppBar(
@@ -13,17 +15,9 @@ class Intropage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
        
         children: [
-          Text('Welcome',style: TextStyle(
-            fontSize: 34,
-            fontWeight: FontWeight.bold,
-          ),),
-          SizedBox(
-            height:11,
-          ),
+          Text("Welcome,$nameFromeHome",style: TextStyle(fontSize: 34,color: Colors.amber),),
           ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder:(context){
-              return MyHomePage(title: 'Home',);
-            }, ));
+           Navigator.pop(context);
           }, child: Text('next'))
         ],
       ),
