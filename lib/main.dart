@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             TextField(
               controller: nameController,
               decoration: InputDecoration(
-                label: Text('name'),
+                label: Text('Name'),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(21),
                 )
