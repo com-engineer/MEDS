@@ -7,6 +7,8 @@ class NeedyPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Available Medicines for Free'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Buyer/Buyer_after_login.dart';
+import 'package:my_first_app/Buyer/Medicine_on_cart.dart';
 
 class Buyer extends StatelessWidget{
   @override
