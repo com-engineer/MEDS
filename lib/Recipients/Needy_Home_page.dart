@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Needy/Needy_after_claim.dart';
+import 'package:my_first_app/Recipients/Needy_after_claim.dart';
 
 class NeedyPage extends StatelessWidget {
   @override
@@ -7,8 +7,7 @@ class NeedyPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Available Medicines for Free'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
+ backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

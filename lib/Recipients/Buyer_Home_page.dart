@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Buyer/Payment_gateway.dart';
+import 'package:my_first_app/Recipients/Payement_Gateway.dart';
 
 class BuyerPage extends StatelessWidget {
   @override
@@ -8,7 +8,6 @@ class BuyerPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Available Medicines for Purchase'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
@@ -31,20 +30,17 @@ class BuyerPage extends StatelessWidget {
     );
   }
 }
-
 class MedicineCard extends StatelessWidget {
   final String name;
   final int price;
   final int quantityAvailable;
   final String expirationDate;
-
   MedicineCard({
     required this.name,
     required this.price,
     required this.quantityAvailable,
     required this.expirationDate,
   });
-
   @override
   Widget build(BuildContext context) {
     return Card(

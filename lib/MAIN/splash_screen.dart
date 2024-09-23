@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
    Timer(Duration(seconds: 5), (){
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-      return Dashboard();
+      return EntryTypeSelection();
     }));
    });
     super.initState();
@@ -23,13 +23,24 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
    return Scaffold(
     body:Container(
-      color: Colors.pink,
+      color:Color(0xFFC2005D), 
       child:Center(
-        child: Text("MEDS",style:TextStyle(
-          fontSize: 34,
-          fontWeight: FontWeight.w800,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("MEDS",style:TextStyle(
+              fontSize: 34,
+              fontWeight: FontWeight.w800,
+              color:Colors.white
+            )),
+              Text("Medicine Exchange and Distribution System",style:TextStyle(
+          fontSize: 14,
+          // fontWeight: FontWeight.w800,
           color:Colors.white
         )),
+          ],
+        ),
+      
       )
     )
    );

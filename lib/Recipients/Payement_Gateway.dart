@@ -3,16 +3,13 @@ import 'package:flutter/material.dart';
 class PaymentGatewayPage extends StatelessWidget {
   final String medicineName;
   final int price;
-
   PaymentGatewayPage({required this.medicineName, required this.price});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Payment for $medicineName'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

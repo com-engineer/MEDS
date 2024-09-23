@@ -8,8 +8,7 @@ class Donor extends StatelessWidget{
    return Scaffold(
      appBar: AppBar(
       title: Text("Login/SignUp"),
-backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-    ),
+ backgroundColor: Theme.of(context).colorScheme.primary,    ),
     body:Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,8 +42,7 @@ class DonorLoginPage extends StatelessWidget {
     return Scaffold(
      appBar: AppBar(
       title: Text("Login As a Donor"),
-backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-    ),
+ backgroundColor: Theme.of(context).colorScheme.primary,    ),
     body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -120,8 +118,7 @@ class DonorSignUpPage extends StatelessWidget {
     return Scaffold(
     appBar: AppBar(
       title: Text("Fill the Registration form"),
-backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-    ),
+ backgroundColor: Theme.of(context).colorScheme.primary,    ),
       body:Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(

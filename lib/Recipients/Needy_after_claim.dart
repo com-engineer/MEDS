@@ -11,6 +11,7 @@ class ClaimedMedicinePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Medicine Claimed Successfully'),
+ backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

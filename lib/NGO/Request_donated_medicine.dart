@@ -8,8 +8,7 @@ class RequestForMedicinesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Request for Medicines'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
+ backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

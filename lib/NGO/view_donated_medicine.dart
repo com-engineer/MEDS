@@ -6,8 +6,7 @@ class ViewDonatedMedicinesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('View Donated Medicines'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
+ backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),

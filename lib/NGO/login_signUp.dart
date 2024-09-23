@@ -7,8 +7,7 @@ class NGO extends StatelessWidget{
    return Scaffold(
     appBar: AppBar(
       title: Text("Login/SignUp"),
-backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-    ),
+ backgroundColor: Theme.of(context).colorScheme.primary,    ),
     body:Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -42,8 +41,7 @@ class NGOLoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
       title: Text("Home for NGO"),
-backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-    ),
+ backgroundColor: Theme.of(context).colorScheme.primary,    ),
       body:Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

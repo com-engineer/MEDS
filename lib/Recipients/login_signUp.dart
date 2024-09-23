@@ -1,15 +1,15 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Needy/needy_after_login.dart';
+import 'package:my_first_app/Recipients/Recipients_Type.dart';
+import 'package:my_first_app/Recipients/Needy_Home_page.dart';
 
-class Needy extends StatelessWidget{
+class Recipients extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
    return Scaffold(
      appBar: AppBar(
       title: Text("Login/SignUp"),
-backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-    ),
+ backgroundColor: Theme.of(context).colorScheme.primary,    ),
     body:Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -17,7 +17,7 @@ backgroundColor: Theme.of(context).colorScheme.inversePrimary,
             ElevatedButton(
               child:Text("Login"),
               onPressed: () {
-               Navigator.push(context, MaterialPageRoute(builder:(context)=> NeedyLoginPage()));
+               Navigator.push(context, MaterialPageRoute(builder:(context)=> RecipientsLoginPage()));
               },
             ),
             ElevatedButton(
@@ -25,7 +25,7 @@ backgroundColor: Theme.of(context).colorScheme.inversePrimary,
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NeedySignUpPage()),
+                  MaterialPageRoute(builder: (context) => RecipientsSignUpPage()),
                 );
               },
             ),
@@ -36,14 +36,13 @@ backgroundColor: Theme.of(context).colorScheme.inversePrimary,
   }
 
 }
-class NeedyLoginPage extends StatelessWidget{
+class RecipientsLoginPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
    return Scaffold(
      appBar: AppBar(
       title: Text("Login As a Needy"),
-backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-    ),
+ backgroundColor: Theme.of(context).colorScheme.primary,    ),
     body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -69,9 +68,8 @@ backgroundColor: Theme.of(context).colorScheme.inversePrimary,
               onPressed: () {
  Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NeedyPage()),
+                  MaterialPageRoute(builder: (context) => RecipientsOptions()),
                 );
-                // Add login functionality here
               },
               child: Text('Login'),
               style: ElevatedButton.styleFrom(
@@ -91,7 +89,7 @@ backgroundColor: Theme.of(context).colorScheme.inversePrimary,
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => NeedySignUpPage()),
+                      MaterialPageRoute(builder: (context) => RecipientsSignUpPage()),
                     );
                   },
                   child: Text(
@@ -112,14 +110,13 @@ backgroundColor: Theme.of(context).colorScheme.inversePrimary,
   }
 
 }
-class NeedySignUpPage extends StatelessWidget {
+class RecipientsSignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
       title: Text("Fill the Registration form"),
-backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-    ),
+ backgroundColor: Theme.of(context).colorScheme.primary,    ),
       body:Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -178,7 +175,7 @@ backgroundColor: Theme.of(context).colorScheme.inversePrimary,
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  // Add signup functionality here
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RecipientsLoginPage()));
                 },
                 child: Text('Signup'),
                 style: ElevatedButton.styleFrom(

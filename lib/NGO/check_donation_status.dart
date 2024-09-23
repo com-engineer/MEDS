@@ -19,8 +19,7 @@ class CheckDonationStatusPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Check Donation Status'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
+ backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16.0),
