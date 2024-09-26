@@ -2,40 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Donor/donor_after_login.dart';
 
-class Donor extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-   return Scaffold(
-     appBar: AppBar(
-      title: Text("Login/SignUp"),
- backgroundColor: Theme.of(context).colorScheme.primary,    ),
-    body:Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-            ElevatedButton(
-              child:Text("Login"),
-              onPressed: () {
-               Navigator.push(context, MaterialPageRoute(builder:(context)=> DonorLoginPage()));
-              },
-            ),
-            ElevatedButton(
-              child: Text("SignUp"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DonorSignUpPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-   );
-  }
-
-}
-
 class DonorLoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

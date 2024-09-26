@@ -1,41 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Recipients/Recipients_Type.dart';
-import 'package:my_first_app/Recipients/Needy_Home_page.dart';
 
-class Recipients extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-   return Scaffold(
-     appBar: AppBar(
-      title: Text("Login/SignUp"),
- backgroundColor: Theme.of(context).colorScheme.primary,    ),
-    body:Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-            ElevatedButton(
-              child:Text("Login"),
-              onPressed: () {
-               Navigator.push(context, MaterialPageRoute(builder:(context)=> RecipientsLoginPage()));
-              },
-            ),
-            ElevatedButton(
-              child: Text("SignUp"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RecipientsSignUpPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-   );
-  }
-
-}
 class RecipientsLoginPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {

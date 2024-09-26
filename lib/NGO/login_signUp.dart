@@ -1,40 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/NGO/NGO_after_login.dart';
 
-class NGO extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-   return Scaffold(
-    appBar: AppBar(
-      title: Text("Login/SignUp"),
- backgroundColor: Theme.of(context).colorScheme.primary,    ),
-    body:Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-            ElevatedButton(
-              child:Text("Login"),
-              onPressed: () {
-               Navigator.push(context, MaterialPageRoute(builder:(context)=> NGOLoginPage()));
-              },
-            ),
-            ElevatedButton(
-              child: Text("SignUp"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => NGOSignUpPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-   );
-  }
-
-}
-
 class NGOLoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
