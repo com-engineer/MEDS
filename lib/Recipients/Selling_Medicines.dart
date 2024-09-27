@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Recipients/Recipients_buy.dart';
-import 'package:my_first_app/Recipients/Recipients_free.dart';
 
 class Reselled_Medicines extends StatelessWidget {
   final List<Map<String, dynamic>> medicines = [
@@ -34,7 +33,7 @@ class Reselled_Medicines extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Available Medicines for Free'),
+        title: Text('Available Medicines to Purchase'),
         backgroundColor: Theme.of(context).colorScheme.primary,
         actions: [
           IconButton(

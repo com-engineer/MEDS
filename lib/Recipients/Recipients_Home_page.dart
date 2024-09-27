@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Recipients/Donated_Medicines.dart';
-import 'package:my_first_app/Recipients/Recipients_buy.dart';
-import 'package:my_first_app/Recipients/Recipients_free.dart';
 import 'package:my_first_app/Recipients/Selling_Medicines.dart';
 
 class RecipientsHomePage extends StatelessWidget {
@@ -9,7 +7,7 @@ class RecipientsHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Available Medicines for Free'),
+          title: Text('Recipients Home Page'),
           backgroundColor: Theme.of(context).colorScheme.primary,
           actions: [
             IconButton(

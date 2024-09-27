@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/NGO/NGO_after_login.dart';
+import 'package:my_first_app/NGO/NGO_Home_Page.dart';
 
 class NGOLoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      title: Text("Home for NGO"),
+      title: Text("NGO Login Page"),
  backgroundColor: Theme.of(context).colorScheme.primary,    ),
       body:Padding(
         padding: const EdgeInsets.all(16.0),

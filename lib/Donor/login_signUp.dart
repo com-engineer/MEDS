@@ -7,7 +7,7 @@ class DonorLoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
      appBar: AppBar(
-      title: Text("Login As a Donor"),
+      title: Text("Donor Login Page"),
  backgroundColor: Theme.of(context).colorScheme.primary,    ),
     body: Padding(
         padding: const EdgeInsets.all(16.0),
