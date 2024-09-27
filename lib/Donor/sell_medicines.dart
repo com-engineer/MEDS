@@ -1,6 +1,24 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-class SellMedicinePage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class SellMedicinePage extends StatefulWidget {
+  @override
+  State<SellMedicinePage> createState() => _SellMedicinePageState();
+}
+
+class _SellMedicinePageState extends State<SellMedicinePage> {
+  String? Medicine_Image;
+   Future<void> _pickImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      setState(() {
+        Medicine_Image = image.path; // Save the selected image path
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,6 +110,28 @@ class SellMedicinePage extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
               ),
+              Container(
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Medicine_Image == null
+                  ? Center(child: Text('No image selected'))
+                  : Image.file(
+                      File(Medicine_Image!), // Display the selected image
+                      fit: BoxFit.cover,
+                    ),
+            ),
+             SizedBox(height: 10),
+            
+            // Button to select image
+            ElevatedButton(
+                onPressed: _pickImage,
+                child: Text('Upload Image'),
+              ),
+           
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {

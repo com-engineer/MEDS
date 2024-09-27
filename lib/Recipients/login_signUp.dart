@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Recipients/Needy_Home_page.dart';
-import 'package:my_first_app/Recipients/Recipients_Type.dart';
+import 'package:my_first_app/Recipients/Recipients_Home_page.dart';
 
 class RecipientsLoginPage extends StatelessWidget{
   @override
@@ -35,7 +34,7 @@ class RecipientsLoginPage extends StatelessWidget{
               onPressed: () {
  Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NeedyPage()),
+                  MaterialPageRoute(builder: (context) => RecipientsHomePage()),
                 );
               },
               child: Text('Login'),
