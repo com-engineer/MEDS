@@ -152,20 +152,30 @@ class donation_Confirmation_page extends StatelessWidget{
       title:Text("Confirmation page"),
        backgroundColor: Theme.of(context).colorScheme.primary,
     ),
-    body:Column(
-      children: [
-        Center(
-          child: Container(child: Text("Thanks For Donating to us !", style: TextStyle(
-            fontSize: 50,
-            fontWeight: FontWeight.w800,
-            
-          ),),),
+    body:Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: Container(
+          color: Colors.amber,
+          // width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Container(child: Text("Thanks For Donating to us !", style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.w800,
+                  
+                ),),),
+              ),
+              // ElevatedButton(
+              //   onPressed: (){
+              //     Navigator.push(context, MaterialPageRoute(builder: (context)=>donor_Dashboard()));
+              //   }, child: Text("Go to Dashboard"))
+            ],
+          ),
         ),
-        ElevatedButton(
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>donor_Dashboard()));
-          }, child: Text("Go to Dashboard"))
-      ],
+      ),
     )
 
    );

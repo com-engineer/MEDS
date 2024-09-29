@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Donor/donate_medicine.dart';
-import 'package:my_first_app/Donor/donor_after_login.dart';
 
 class donor_Dashboard extends StatelessWidget {
   final List<Map<String, dynamic>> medicines = [
@@ -31,7 +30,7 @@ class donor_Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Donated Medicines'),
+        title: Text('Hi!,User'),
         backgroundColor: Theme.of(context).colorScheme.primary,
         leading: Builder(
           builder: (context) => IconButton(
@@ -45,7 +44,7 @@ class donor_Dashboard extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>DonorOptionsPage())) ;// This will log out the user
+              Navigator.pop(context);// This will log out the user
             },
           ),
         ],

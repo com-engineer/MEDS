@@ -159,20 +159,29 @@ class Sell_Confirmation_page extends StatelessWidget{
       title:Text("Confirmation page"),
        backgroundColor: Theme.of(context).colorScheme.primary,
     ),
-    body:Column(
-      children: [
-        Center(
-          child: Container(child: Text("Thanks For reselling to us !", style: TextStyle(
-            fontSize: 50,
-            fontWeight: FontWeight.w800,
-            
-          ),),),
+    body:Center(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          color: Colors.amber,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Container(child: Text("Thanks For reselling to us !", style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.w800,
+                  
+                ),),),
+              ),
+              // ElevatedButton(
+              //   onPressed: (){
+              //     Navigator.push(context, MaterialPageRoute(builder: (context)=>seller_Dashboard()));
+              //   }, child: Text("Go to Dashboard"))
+            ],
+          ),
         ),
-        ElevatedButton(
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>seller_Dashboard()));
-          }, child: Text("Go to Dashboard"))
-      ],
+      ),
     )
 
    );
