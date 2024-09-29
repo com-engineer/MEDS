@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Donor/donate_medicine.dart';
-import 'package:my_first_app/Donor/sell_medicines.dart';
+import 'package:my_first_app/Donor/donor_Dashboard.dart';
+import 'package:my_first_app/Donor/seller_Dashboard.dart';
 
 class DonorOptionsPage extends StatelessWidget {
   @override
@@ -18,7 +18,7 @@ class DonorOptionsPage extends StatelessWidget {
             children: <Widget>[
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DonateMedicinePage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>donor_Dashboard()));
                 },
                 child: Text('Donate Medicines'),
                 style: ElevatedButton.styleFrom(
@@ -28,7 +28,7 @@ class DonorOptionsPage extends StatelessWidget {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SellMedicinePage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>seller_Dashboard()));
                 },
                 child: Text('Sell Medicines'),
                 style: ElevatedButton.styleFrom(

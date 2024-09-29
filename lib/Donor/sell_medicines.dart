@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:my_first_app/Donor/seller_Dashboard.dart';
 
 class SellMedicinePage extends StatefulWidget {
   @override
@@ -96,14 +97,14 @@ class _SellMedicinePageState extends State<SellMedicinePage> {
                 ),
               ),
               SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Price',
-                  border: OutlineInputBorder(),
-                ),
-                keyboardType: TextInputType.number,
-              ),
-              SizedBox(height: 20),
+              // TextField(
+              //   decoration: InputDecoration(
+              //     labelText: 'Price',
+              //     border: OutlineInputBorder(),
+              //   ),
+              //   keyboardType: TextInputType.number,
+              // ),
+              // SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Additional Notes (optional)',
@@ -135,7 +136,7 @@ class _SellMedicinePageState extends State<SellMedicinePage> {
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  // Add submit logic here, e.g., save the medicine info for selling
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Sell_Confirmation_page()));
                 },
                 child: Text('Submit for Sale'),
                 style: ElevatedButton.styleFrom(
@@ -148,4 +149,33 @@ class _SellMedicinePageState extends State<SellMedicinePage> {
       ),
     );
   }
+}
+
+class Sell_Confirmation_page extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+   return Scaffold(
+    appBar: AppBar(
+      title:Text("Confirmation page"),
+       backgroundColor: Theme.of(context).colorScheme.primary,
+    ),
+    body:Column(
+      children: [
+        Center(
+          child: Container(child: Text("Thanks For reselling to us !", style: TextStyle(
+            fontSize: 50,
+            fontWeight: FontWeight.w800,
+            
+          ),),),
+        ),
+        ElevatedButton(
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>seller_Dashboard()));
+          }, child: Text("Go to Dashboard"))
+      ],
+    )
+
+   );
+  }
+  
 }

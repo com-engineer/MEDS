@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:my_first_app/Donor/donor_Dashboard.dart';
 
 class DonateMedicinePage extends StatefulWidget {
   @override
@@ -128,7 +129,7 @@ class _DonateMedicinePageState extends State<DonateMedicinePage> {
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  // Submit donation logic here
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>donation_Confirmation_page()));
                 },
                 child: Text('Submit Donation'),
                 style: ElevatedButton.styleFrom(
@@ -141,4 +142,33 @@ class _DonateMedicinePageState extends State<DonateMedicinePage> {
       ),
     );
   }
+}
+
+class donation_Confirmation_page extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+   return Scaffold(
+    appBar: AppBar(
+      title:Text("Confirmation page"),
+       backgroundColor: Theme.of(context).colorScheme.primary,
+    ),
+    body:Column(
+      children: [
+        Center(
+          child: Container(child: Text("Thanks For Donating to us !", style: TextStyle(
+            fontSize: 50,
+            fontWeight: FontWeight.w800,
+            
+          ),),),
+        ),
+        ElevatedButton(
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>donor_Dashboard()));
+          }, child: Text("Go to Dashboard"))
+      ],
+    )
+
+   );
+  }
+  
 }
