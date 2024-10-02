@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/MAIN/main.dart';
 import 'package:my_first_app/NGO/Request_donated_medicine.dart';
 import 'package:my_first_app/NGO/check_donation_status.dart';
 import 'package:my_first_app/NGO/view_donated_medicine.dart';
@@ -10,6 +11,18 @@ class NGODashboardPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('NGO Dashboard'),
  backgroundColor: Theme.of(context).colorScheme.primary,
+  actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => EntryTypeSelection()), // Replace RecipientsHomePage with the actual class for that page
+      (Route<dynamic> route) => false, // This will clear all the previous routes
+    );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -74,16 +87,16 @@ class NGODashboardPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             // Other actions (e.g., Logout)
-            ElevatedButton(
-              onPressed: () {
-                // Perform logout
-                Navigator.of(context).pop();
-              },
-              child: Text('Logout'),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-              ),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     // Perform logout
+            //     Navigator.of(context).pop();
+            //   },
+            //   child: Text('Logout'),
+            //   style: ElevatedButton.styleFrom(
+            //     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+            //   ),
+            // ),
           ],
         ),
       ),

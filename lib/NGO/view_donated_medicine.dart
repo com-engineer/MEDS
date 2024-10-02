@@ -17,7 +17,7 @@ class _ViewDonatedMedicinesPageState extends State<ViewDonatedMedicinesPage> {
       'expiryDate': '2025-12-01',
       'manufacturer': 'ABC Pharmaceuticals',
       'conditionTreated': 'Fever',
-            'price':'\$40',
+            'price':'Rs.40',
 
         'image': 'Paracetamol.jpeg',
     },
@@ -29,7 +29,7 @@ class _ViewDonatedMedicinesPageState extends State<ViewDonatedMedicinesPage> {
       'expiryDate': '2024-06-15',
       'manufacturer': 'XYZ Pharmaceuticals',
       'conditionTreated': 'Pain Relief',
-            'price':'\$30',
+            'price':'Rs.30',
 
        'image': 'Ibuprofen.jpeg',
     },
@@ -42,16 +42,16 @@ class _ViewDonatedMedicinesPageState extends State<ViewDonatedMedicinesPage> {
       appBar: AppBar(
         title: Text('Donated Medicines'),
         backgroundColor: Theme.of(context).colorScheme.primary,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.logout),
-            onPressed: () {
-              // Add your logout functionality here
-              // For example: Navigator.pop(context);
-              Navigator.of(context).pop(); // This will log out the user
-            },
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     icon: Icon(Icons.logout),
+        //     onPressed: () {
+        //       // Add your logout functionality here
+        //       // For example: Navigator.pop(context);
+        //       Navigator.of(context).pop(); // This will log out the user
+        //     },
+        //   ),
+        // ],
       ),
       body: Column(
         

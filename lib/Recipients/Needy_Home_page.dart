@@ -1,18 +1,18 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Recipients/Recipients_buy.dart';
+import 'package:my_first_app/Recipients/Recipients_free.dart';
 
-class Reselled_Medicines extends StatelessWidget {
+class 
+Needy_Home_page extends StatelessWidget {
   final List<Map<String, dynamic>> medicines = [
     {
       'name': 'Paracetamol',
       'dosageForm': 'Tablet',
       'strength': '500mg',
       'quantityAvailable': 10,
-      'expirationDate': '2025-12-01',
+      'expiryDate': '2025-12-01',
       'manufacturer': 'ABC Pharmaceuticals',
       'conditionTreated': 'Fever',
-      'price':'\$40',
         'image': 'Paracetamol.jpeg',
     },
     {
@@ -20,10 +20,9 @@ class Reselled_Medicines extends StatelessWidget {
       'dosageForm': 'Tablet',
       'strength': '200mg',
       'quantityAvailable': 15,
-      'expirationDate': '2024-06-15',
+      'expiryDate': '2024-06-15',
       'manufacturer': 'XYZ Pharmaceuticals',
       'conditionTreated': 'Pain Relief',
-      'price':'\$30',
        'image': 'Ibuprofen.jpeg',
     },
     // Add more medicines here
@@ -33,18 +32,9 @@ class Reselled_Medicines extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Available Medicines to Purchase'),
+        title: Text('Donated Medicines'),
         backgroundColor: Theme.of(context).colorScheme.primary,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.logout),
-            onPressed: () {
-              // Add your logout functionality here
-              // For example: Navigator.pop(context);
-              Navigator.of(context).pop(); // This will log out the user
-            },
-          ),
-        ],
+       
       ),
       body: Column(
         
@@ -90,15 +80,14 @@ class Reselled_Medicines extends StatelessWidget {
                               ),
                               Text('Manufacturer: ${medicine['manufacturer']}'),
                               Text('Expiry Date: ${medicine['expiryDate']}'),
-                              Text('Price: ${medicine['price']}'),
-                              
+                             
+                          
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>ConfirmOrderPage_Buyer()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>ConfirmOrderPage_Needy()));
                               },
-                              child: Text('Buy'),
+                              child: Text('Claim'),
                             ),
-                         
                             ],
                           ),
                         ),

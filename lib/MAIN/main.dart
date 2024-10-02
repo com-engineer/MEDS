@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/Donor/donor_Dashboard.dart';
 import 'package:my_first_app/Donor/login_signUp.dart';
+import 'package:my_first_app/Donor/seller_Dashboard.dart';
 import 'package:my_first_app/NGO/login_signUp.dart';
 import 'package:my_first_app/Recipients/login_signUp.dart';
 import 'package:my_first_app/MAIN/splash_screen.dart';
@@ -26,6 +28,12 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      routes: {
+        // '/login': (context) => RecipientsLoginPage(),  // Login Page
+        '/seller_Dashboard': (context) => seller_Dashboard(),  // Recipients Home Page
+        '/donor_Dashboard': (context) => donor_Dashboard(),  // Reselled Medicines Page
+        // Buyer Information Page
+      },
       home: SplashScreen(),
     );
   }

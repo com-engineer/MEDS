@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Recipients/Donated_Medicines.dart';
-import 'package:my_first_app/Recipients/Selling_Medicines.dart';
+import 'package:my_first_app/MAIN/main.dart';
+import 'package:my_first_app/Recipients/Needy_Home_page.dart';
+import 'package:my_first_app/Recipients/Buyer_Home_page.dart';
 
 class RecipientsHomePage extends StatelessWidget {
   @override
@@ -8,17 +9,21 @@ class RecipientsHomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Recipients Home Page'),
+          //  leading: null,
+
           backgroundColor: Theme.of(context).colorScheme.primary,
           actions: [
-            IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {
-                // Add your logout functionality here
-                // For example: Navigator.pop(context);
-                Navigator.of(context).pop(); // This will log out the user
-              },
-            ),
-          ],
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => EntryTypeSelection()), // Replace RecipientsHomePage with the actual class for that page
+      (Route<dynamic> route) => false, // This will clear all the previous routes
+    );
+            },
+          ),
+        ],
         ),
         body: Center(
           child: Column(
@@ -28,7 +33,7 @@ class RecipientsHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Reselled_Medicines()),
+                    MaterialPageRoute(builder: (context) => Buyer_Home_page()),
                   );
                 },
                 child: Text('Buyer'),
@@ -37,7 +42,7 @@ class RecipientsHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Donated_Medicines()),
+                    MaterialPageRoute(builder: (context) => Needy_Home_page()),
                   );
                 },
                 child: Text('Needy'),

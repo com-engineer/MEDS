@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:my_first_app/Donor/donor_Dashboard.dart';
+import 'package:my_first_app/Donor/donor_after_login.dart';
 
 class DonateMedicinePage extends StatefulWidget {
   @override
@@ -39,13 +40,13 @@ class _DonateMedicinePageState extends State<DonateMedicinePage> {
                 ),
               ),
               SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Dosage Form (e.g., Tablet, Syrup)',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
+              // TextField(
+              //   decoration: InputDecoration(
+              //     labelText: 'Dosage Form (e.g., Tablet, Syrup)',
+              //     border: OutlineInputBorder(),
+              //   ),
+              // ),
+              // SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Strength (e.g., 500 mg)',
@@ -76,27 +77,27 @@ class _DonateMedicinePageState extends State<DonateMedicinePage> {
                 ),
               ),
               SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Condition Treated',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Side Effects',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Storage Conditions',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
+              // TextField(
+              //   decoration: InputDecoration(
+              //     labelText: 'Condition Treated',
+              //     border: OutlineInputBorder(),
+              //   ),
+              // ),
+              // SizedBox(height: 20),
+              // TextField(
+              //   decoration: InputDecoration(
+              //     labelText: 'Side Effects',
+              //     border: OutlineInputBorder(),
+              //   ),
+              // ),
+              // SizedBox(height: 20),
+              // TextField(
+              //   decoration: InputDecoration(
+              //     labelText: 'Storage Conditions',
+              //     border: OutlineInputBorder(),
+              //   ),
+              // ),
+              // SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Additional Notes (optional)',
@@ -156,7 +157,7 @@ class donation_Confirmation_page extends StatelessWidget{
       padding: const EdgeInsets.all(8.0),
       child: Center(
         child: Container(
-          color: Colors.amber,
+          color: Colors.greenAccent,
           // width: 100,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -168,10 +169,10 @@ class donation_Confirmation_page extends StatelessWidget{
                   
                 ),),),
               ),
-              // ElevatedButton(
-              //   onPressed: (){
-              //     Navigator.push(context, MaterialPageRoute(builder: (context)=>donor_Dashboard()));
-              //   }, child: Text("Go to Dashboard"))
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DonorOptionsPage()));
+                }, child: Text("Go to Home"))
             ],
           ),
         ),

@@ -34,61 +34,53 @@ class seller_Dashboard extends StatelessWidget {
       appBar: AppBar(
         title: Text('Hi!,User'),
         backgroundColor: Theme.of(context).colorScheme.primary,
-         leading: Builder(
-          builder: (context) => IconButton(
-            icon: Icon(Icons.menu), // Hamburger icon
-            onPressed: () {
-              Scaffold.of(context).openDrawer(); // Opens the drawer
-            },
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.logout),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>DonorOptionsPage())) ;// This will log out the user
-
-            },
-          ),
-        ],
+        //  leading: Builder(
+        //   builder: (context) => IconButton(
+        //     icon: Icon(Icons.menu), // Hamburger icon
+        //     onPressed: () {
+        //       Scaffold.of(context).openDrawer(); // Opens the drawer
+        //     },
+        //   ),
+        // ),
+       
         
       ),
-        drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.all(8),
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.local_hospital),
-              title: Text('Sell Medicine'),
-              onTap: () {
-                                Navigator.of(context).pop();
+      //   drawer: Drawer(
+      //   child: ListView(
+      //     padding: EdgeInsets.all(8),
+      //     children: <Widget>[
+      //       DrawerHeader(
+      //         decoration: BoxDecoration(
+      //           color: Colors.blue,
+      //         ),
+      //         child: Text(
+      //           'Menu',
+      //           style: TextStyle(
+      //             color: Colors.white,
+      //             fontSize: 24,
+      //           ),
+      //         ),
+      //       ),
+      //       ListTile(
+      //         leading: Icon(Icons.local_hospital),
+      //         title: Text('Sell Medicine'),
+      //         onTap: () {
+      //                           Navigator.of(context).pop();
 
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>SellMedicinePage()));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.share),
-              title: Text('Share'),
-              onTap: () {
-                // Navigator.of(context).pop();
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=>DonateMedicinePage()));
-              },
-            ),
-          ],
-        ),
-      ),
+      //           Navigator.push(context, MaterialPageRoute(builder: (context)=>SellMedicinePage()));
+      //         },
+      //       ),
+      //       ListTile(
+      //         leading: Icon(Icons.share),
+      //         title: Text('Share'),
+      //         onTap: () {
+      //           // Navigator.of(context).pop();
+      //           // Navigator.push(context, MaterialPageRoute(builder: (context)=>DonateMedicinePage()));
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
       body: Column(
         
         children: [
@@ -146,6 +138,14 @@ class seller_Dashboard extends StatelessWidget {
               },
             ),
           ),
+          FloatingActionButton(
+        onPressed: () {
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>SellMedicinePage()));
+
+        },
+        child: Icon(Icons.add), // Plus icon
+        backgroundColor: Theme.of(context).colorScheme.primary,
+      ),
         ],
       ),
     );

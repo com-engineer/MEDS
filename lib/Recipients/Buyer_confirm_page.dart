@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/Recipients/Buyer_Home_page.dart';
+import 'package:my_first_app/Recipients/Recipients_Home_page.dart';
 
 class BuyerInformationPage extends StatelessWidget {
   @override
@@ -50,7 +52,7 @@ class BuyerInformationPage extends StatelessWidget {
               children: [
                 Text('Total Price:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 SizedBox(width: 10),
-                Text('\$40', style: TextStyle(fontSize: 18)), // Example price
+                Text('Rs.30', style: TextStyle(fontSize: 18)), // Example price
               ],
             ),
             SizedBox(height: 30),
@@ -59,8 +61,11 @@ class BuyerInformationPage extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.popUntil(context, (route) => route.isFirst);
-                },
+ Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => RecipientsHomePage()), // Replace RecipientsHomePage with the actual class for that page
+      (Route<dynamic> route) => false, // This will clear all the previous routes
+    );         },
                 child: Text('Go to Home'),
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Donor/donor_Dashboard.dart';
 import 'package:my_first_app/Donor/seller_Dashboard.dart';
+import 'package:my_first_app/MAIN/main.dart';
 
 class DonorOptionsPage extends StatelessWidget {
   @override
@@ -9,6 +10,19 @@ class DonorOptionsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Give medicines'),
  backgroundColor: Theme.of(context).colorScheme.primary,
+ automaticallyImplyLeading: false,
+          actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => EntryTypeSelection()), // Replace RecipientsHomePage with the actual class for that page
+      (Route<dynamic> route) => false, // This will clear all the previous routes
+    );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:my_first_app/Donor/donor_after_login.dart';
 import 'package:my_first_app/Donor/seller_Dashboard.dart';
 
 class SellMedicinePage extends StatefulWidget {
@@ -39,13 +40,13 @@ class _SellMedicinePageState extends State<SellMedicinePage> {
                 ),
               ),
               SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Dosage Form (e.g., Tablet, Syrup)',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
+              // TextField(
+              //   decoration: InputDecoration(
+              //     labelText: 'Dosage Form (e.g., Tablet, Syrup)',
+              //     border: OutlineInputBorder(),
+              //   ),
+              // ),
+              // SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Strength (e.g., 500 mg)',
@@ -76,35 +77,43 @@ class _SellMedicinePageState extends State<SellMedicinePage> {
                 ),
               ),
               SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Condition Treated',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Side Effects',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Storage Conditions',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
               // TextField(
               //   decoration: InputDecoration(
-              //     labelText: 'Price',
+              //     labelText: 'Condition Treated',
               //     border: OutlineInputBorder(),
               //   ),
-              //   keyboardType: TextInputType.number,
               // ),
               // SizedBox(height: 20),
+              // TextField(
+              //   decoration: InputDecoration(
+              //     labelText: 'Side Effects',
+              //     border: OutlineInputBorder(),
+              //   ),
+              // ),
+              // SizedBox(height: 20),
+              // TextField(
+              //   decoration: InputDecoration(
+              //     labelText: 'Storage Conditions',
+              //     border: OutlineInputBorder(),
+              //   ),
+              // ),
+              // SizedBox(height: 20),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Actual Price',
+                  border: OutlineInputBorder(),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(height: 20),
+               TextField(
+                decoration: InputDecoration(
+                  labelText: 'Predicted Price for reselling',
+                  border: OutlineInputBorder(),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Additional Notes (optional)',
@@ -157,13 +166,14 @@ class Sell_Confirmation_page extends StatelessWidget{
    return Scaffold(
     appBar: AppBar(
       title:Text("Confirmation page"),
+automaticallyImplyLeading: false,
        backgroundColor: Theme.of(context).colorScheme.primary,
     ),
     body:Center(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          color: Colors.amber,
+          color: Colors.greenAccent,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -174,10 +184,10 @@ class Sell_Confirmation_page extends StatelessWidget{
                   
                 ),),),
               ),
-              // ElevatedButton(
-              //   onPressed: (){
-              //     Navigator.push(context, MaterialPageRoute(builder: (context)=>seller_Dashboard()));
-              //   }, child: Text("Go to Dashboard"))
+              ElevatedButton(
+                onPressed: (){
+ Navigator.push(context, MaterialPageRoute(builder: (context)=>DonorOptionsPage()));
+                 }, child: Text("Go to Home"))
             ],
           ),
         ),
