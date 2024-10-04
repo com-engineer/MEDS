@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Donor/donor_after_login.dart';
 import 'package:my_first_app/Donor/sell_medicines.dart';
 
 class seller_Dashboard extends StatelessWidget {
@@ -12,7 +11,7 @@ class seller_Dashboard extends StatelessWidget {
       'quantityAvailable': 10,
       'expiryDate': '2025-12-01',
       'manufacturer': 'ABC Pharmaceuticals',
-      'conditionTreated': 'Fever',
+      // 'conditionTreated': 'Fever',
         'image': 'Paracetamol.jpeg',
     },
     {
@@ -22,7 +21,7 @@ class seller_Dashboard extends StatelessWidget {
       'quantityAvailable': 15,
       'expiryDate': '2024-06-15',
       'manufacturer': 'XYZ Pharmaceuticals',
-      'conditionTreated': 'Pain Relief',
+      // 'conditionTreated': 'Pain Relief',
        'image': 'Ibuprofen.jpeg',
     },
     // Add more medicines here
