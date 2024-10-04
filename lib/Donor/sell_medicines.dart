@@ -79,16 +79,17 @@ final List<String> medicines = [
 
   // Fetch predicted price based on the inputs
   Future<void> _fetchPredictedPrice() async {
-    if (_priceController.text.isEmpty ||
+    if (
         _medicineNameController.text.isEmpty ||
         _compositionMgController.text.isEmpty ||
         _quantityController.text.isEmpty ||
-        _remainingQuantityController.text.isEmpty) {
+        _remainingQuantityController.text.isEmpty ||
+         _priceController.text.isEmpty) {
       return;
     }
 
     final response = await http.post(
-      Uri.parse('http://192.168.0.108:5000/predict'), // Replace with your Flask server IP
+      Uri.parse('http://192.168.1.15:5000/predict'), // Replace with your Flask server IP
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
