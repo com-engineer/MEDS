@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/MAIN/main.dart';
+import 'package:my_first_app/main.dart';
 import 'package:my_first_app/NGO/Request_donated_medicine.dart';
 import 'package:my_first_app/NGO/check_donation_status.dart';
 import 'package:my_first_app/NGO/view_donated_medicine.dart';
