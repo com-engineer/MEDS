@@ -73,41 +73,7 @@ razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
                 onPressed: _pickImage,
                 child: Text('Upload Image'),
               ),
-           
-            SizedBox(height: 20),
-
-            // Payment method selection
-            // Align(
-            //   alignment: Alignment.centerLeft,
-            //   child: Text(
-            //     'Payment via:',
-            //     style: TextStyle(fontSize: 18),
-            //   ),
-            // ),
-            // ListTile(
-            //   title: const Text('Debit Card'),
-            //   leading: Radio<String>(
-            //     value: 'Debit Card',
-            //     groupValue: selectedPaymentMethod,
-            //     onChanged: (value) {
-            //       setState(() {
-            //         selectedPaymentMethod = value!;
-            //       });
-            //     },
-            //   ),
-            // ),
-            // ListTile(
-            //   title: const Text('UPI'),
-            //   leading: Radio<String>(
-            //     value: 'UPI',
-            //     groupValue: selectedPaymentMethod,
-            //     onChanged: (value) {
-            //       setState(() {
-            //         selectedPaymentMethod = value!;
-            //       });
-            //     },
-            //   ),
-            // ),
+          
             SizedBox(height: 20),
             
             // Confirm Order button
