@@ -9,7 +9,7 @@ class NGODashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('NGO Dashboard'),
+        title: Text('NGO Dashboard',style: Theme.of(context).textTheme.headlineLarge,),
  backgroundColor: Theme.of(context).colorScheme.primary,
   actions: [
           IconButton(

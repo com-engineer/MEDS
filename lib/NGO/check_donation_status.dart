@@ -18,7 +18,7 @@ class CheckDonationStatusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Check Donation Status'),
+        title: Text('Check Donation Status',style: Theme.of(context).textTheme.headlineLarge,),
  backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: ListView.builder(

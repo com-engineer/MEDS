@@ -131,7 +131,7 @@ final List<String> medicines = [
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sell Medicines'),
+        title: Text('Sell Medicines',style: Theme.of(context).textTheme.headlineLarge,),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(
@@ -260,7 +260,7 @@ class Sell_Confirmation_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Confirmation Page"),
+        title: Text("Confirmation Page",style: Theme.of(context).textTheme.headlineLarge,),
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),

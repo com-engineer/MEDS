@@ -28,7 +28,7 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage_Needy> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Confirm Order'),
+        title: Text('Confirm Order',style: Theme.of(context).textTheme.headlineLarge,),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: SingleChildScrollView(

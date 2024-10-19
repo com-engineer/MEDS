@@ -30,7 +30,7 @@ class donor_Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hi!,User'),
+        title: Text('Hi!,User',style: Theme.of(context).textTheme.headlineLarge,),
         backgroundColor: Theme.of(context).colorScheme.primary,
         // leading: Builder(
         //   builder: (context) => IconButton(

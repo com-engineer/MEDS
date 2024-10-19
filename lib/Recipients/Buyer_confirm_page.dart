@@ -6,7 +6,7 @@ class BuyerInformationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Order Details'),
+        title: Text('Order Details',style: Theme.of(context).textTheme.headlineLarge,),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
- // Import Firebase Core
-import 'package:local_auth/local_auth.dart';   // Import the local_auth package
+import 'package:local_auth/local_auth.dart';
 import 'package:my_first_app/Donor/donor_Dashboard.dart';
 import 'package:my_first_app/Donor/login_signUp.dart';
 import 'package:my_first_app/Donor/seller_Dashboard.dart';
 import 'package:my_first_app/NGO/login_signUp.dart';
 import 'package:my_first_app/Recipients/login_signUp.dart';
-// import 'package:my_first_app/splash_screen.dart';
+import 'package:my_first_app/splash_screen.dart'; // Import Authentication Screen
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,36 +20,36 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Color(0xFFC2005D), // Custom color as primary
+          primary: Color(0xFFC2005D),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFFC2005D), // Button background color
-            foregroundColor: Colors.white, // Button text color
-            textStyle: TextStyle(fontWeight: FontWeight.bold,fontFamily:'button'),
-            
+            backgroundColor: Color(0xFFC2005D),
+            foregroundColor: Colors.white,
+            textStyle: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'button'),
           ),
         ),
         textTheme: TextTheme(
-          headlineLarge: TextStyle(fontFamily: 'heading', fontSize: 34, color: Colors.white),
-           bodyMedium: TextStyle(fontFamily: 'BodyFont' )
+          headlineLarge: TextStyle(fontFamily: 'heading', fontSize: 25, color: Colors.white),
+          bodyMedium: TextStyle(fontFamily: 'BodyFont'),
         ),
       ),
-      // routes: {
-      //   '/seller_Dashboard': (context) => SellerDashboard(),
-      //   '/donor_Dashboard': (context) => DonorDashboard(),
-      // },
-      home: SplashScreen(),
+      routes: {
+        '/seller_Dashboard': (context) => seller_Dashboard(),
+        '/donor_Dashboard': (context) => donor_Dashboard(),
+      },
+      home: AuthenticationScreen(), // Start with the Authentication Screen
     );
   }
 }
 
-class SplashScreen extends StatefulWidget {
+
+class AuthenticationScreen extends StatefulWidget {
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<AuthenticationScreen> createState() => _AuthenticationScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _AuthenticationScreenState extends State<AuthenticationScreen> {
   final LocalAuthentication auth = LocalAuthentication();
 
   @override
@@ -67,7 +66,6 @@ class _SplashScreenState extends State<SplashScreen> {
         localizedReason: 'Please authenticate to access the app',
         options: const AuthenticationOptions(
           stickyAuth: true,
-          // biometricOnly: true,
         ),
       );
     } catch (e) {
@@ -75,10 +73,10 @@ class _SplashScreenState extends State<SplashScreen> {
     }
 
     if (authenticated) {
-      // Navigate to EntryTypeSelection after successful authentication
+      // Navigate to SplashScreen after successful authentication
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => EntryTypeSelection()),
+        MaterialPageRoute(builder: (context) => SplashScreen()), // Move to SplashScreen
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -91,11 +89,12 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: CircularProgressIndicator(),  // Show loading indicator
+        child: CircularProgressIndicator(), // Loading indicator while authentication happens
       ),
     );
   }
 }
+
 
 class EntryTypeSelection extends StatefulWidget {
   @override
@@ -103,14 +102,15 @@ class EntryTypeSelection extends StatefulWidget {
 }
 
 class _EntryTypeSelectionState extends State<EntryTypeSelection> {
-  String? selectedType;
-  bool showProceedButtons = false;
+  String? selectedType; // Track the selected button type
+  bool showProceedButtons = false; // Flag to control the visibility of Login/Signup buttons
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Welcome to MEDS" ,style:Theme.of(context).textTheme.headlineLarge),
+        title: Text("Welcome to MEDS",style: Theme.of(context).textTheme.headlineLarge,
+),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Center(
@@ -122,95 +122,136 @@ class _EntryTypeSelectionState extends State<EntryTypeSelection> {
             children: [
               Text(
                 'Enter As:',
-                style: Theme.of(context).textTheme.headlineLarge,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 25),
               ),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  // Recipients Button
                   ElevatedButton(
                     child: Text("Recipients"),
                     onPressed: () {
                       setState(() {
-                        selectedType = "Recipients";
-                        showProceedButtons = false;
+                        selectedType = "Recipients"; // Set selected type to Recipients
+                        showProceedButtons = false; // Hide proceed buttons until 'Proceed' is pressed
                       });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: selectedType == "Recipients"
                           ? Theme.of(context).colorScheme.primary
-                          : Colors.white,
+                          : Colors.white, // Change color based on selected state
                       foregroundColor: selectedType == "Recipients"
                           ? Colors.white
-                          : Colors.black,
+                          : Colors.black, // Text color
                     ),
                   ),
+
+                  // NGO Button
                   ElevatedButton(
                     child: Text("NGO"),
                     onPressed: () {
                       setState(() {
-                        selectedType = "NGO";
-                        showProceedButtons = false;
+                        selectedType = "NGO"; // Set selected type to NGO
+                        showProceedButtons = false; // Hide proceed buttons until 'Proceed' is pressed
                       });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: selectedType == "NGO"
                           ? Theme.of(context).colorScheme.primary
-                          : Colors.white,
+                          : Colors.white, // Change color based on selected state
                       foregroundColor: selectedType == "NGO"
                           ? Colors.white
-                          : Colors.black,
+                          : Colors.black, // Text color
                     ),
                   ),
+
+                  // Donor Button
                   ElevatedButton(
                     child: Text("Donor"),
                     onPressed: () {
                       setState(() {
-                        selectedType = "Donor";
-                        showProceedButtons = false;
+                        selectedType = "Donor"; // Set selected type to Donor
+                        showProceedButtons = false; // Hide proceed buttons until 'Proceed' is pressed
                       });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: selectedType == "Donor"
                           ? Theme.of(context).colorScheme.primary
-                          : Colors.white,
+                          : Colors.white, // Change color based on selected state
                       foregroundColor: selectedType == "Donor"
                           ? Colors.white
-                          : Colors.black,
+                          : Colors.black, // Text color
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 20),
+
+              // Proceed Button
               ElevatedButton(
                 child: Text("Proceed to Login/Signup"),
                 onPressed: () {
                   if (selectedType != null) {
                     setState(() {
-                      showProceedButtons = true;
+                      showProceedButtons = true; // Show Login/Signup buttons
                     });
                   } else {
+                    // Show an error if no type is selected
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text("Please select an entry type")),
                     );
                   }
                 },
               ),
+
               SizedBox(height: 20),
+
+              // Conditionally render SignUp and Login buttons if a type is selected and 'Proceed' is pressed
               if (showProceedButtons)
                 Column(
                   children: [
                     ElevatedButton(
                       child: Text("Login"),
                       onPressed: () {
-                        // _handleLogin(); // Call Firebase Login
+                        if (selectedType == "Donor") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DonorLoginPage()),
+                          );
+                        } else if (selectedType == "Recipients") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => RecipientsLoginPage()),
+                          );
+                        } else if (selectedType == "NGO") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => NGOLoginPage()),
+                          );
+                        }
                       },
                     ),
                     SizedBox(height: 10),
                     ElevatedButton(
                       child: Text("SignUp"),
                       onPressed: () {
-                        // _handleSignUp(); // Call Firebase SignUp
+                        if (selectedType == "Donor") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DonorSignUpPage()),
+                          );
+                        } else if (selectedType == "Recipients") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => RecipientsSignUpPage()),
+                          );
+                        } else if (selectedType == "NGO") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => NGOSignUpPage()),
+                          );
+                        }
                       },
                     ),
                   ],
@@ -221,67 +262,4 @@ class _EntryTypeSelectionState extends State<EntryTypeSelection> {
       ),
     );
   }
-
-  // void _handleLogin() async {
-  //   // Implement login logic using FirebaseAuth
-  //   UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-  //     email: 'test@example.com',
-  //     password: 'password123',
-  //   );
-  //   if (userCredential.user != null) {
-  //     // Navigate to the respective dashboard
-  //     if (selectedType == "Donor") {
-  //       Navigator.push(
-  //         context,
-  //         MaterialPageRoute(builder: (context) => DonorDashboard()),
-  //       );
-  //     } else if (selectedType == "Recipients") {
-  //       Navigator.push(
-  //         context,
-  //         MaterialPageRoute(builder: (context) => RecipientsLoginPage()),
-  //       );
-  //     } else if (selectedType == "NGO") {
-  //       Navigator.push(
-  //         context,
-  //         MaterialPageRoute(builder: (context) => NGOLoginPage()),
-  //       );
-  //     }
-  //   } else {
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       SnackBar(content: Text("Login failed")),
-  //     );
-  //   }
-  // }
-
-//   void _handleSignUp() async {
-//     // Implement sign-up logic using FirebaseAuth
-//     UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
-//       email: 'test@example.com',
-//       password: 'password123',
-//     );
-//     if (userCredential.user != null) {
-//       // Handle the signup redirection
-//       if (selectedType == "Donor") {
-//         Navigator.push(
-//           context,
-//           MaterialPageRoute(builder: (context) => DonorSignUpPage()),
-//         );
-//       } else if (selectedType == "Recipients") {
-//         Navigator.push(
-//           context,
-//           MaterialPageRoute(builder: (context) => RecipientsSignUpPage()),
-//         );
-//       } else if (selectedType == "NGO") {
-//         Navigator.push(
-//           context,
-//           MaterialPageRoute(builder: (context) => NGOSignUpPage()),
-//         );
-//       }
-//     } else {
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         SnackBar(content: Text("Signup failed")),
-//       );
-//     }
-//   }
-// }
 }

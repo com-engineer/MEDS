@@ -8,7 +8,7 @@ class DonorOptionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Give medicines'),
+        title: Text('Give medicines',style: Theme.of(context).textTheme.headlineLarge,),
  backgroundColor: Theme.of(context).colorScheme.primary,
  automaticallyImplyLeading: false,
           actions: [

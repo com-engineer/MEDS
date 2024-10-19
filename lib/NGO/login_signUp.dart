@@ -6,7 +6,7 @@ class NGOLoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      title: Text("NGO Login Page"),
+      title: Text("NGO Login Page",style: Theme.of(context).textTheme.headlineLarge,),
  backgroundColor: Theme.of(context).colorScheme.primary,    ),
       body:Padding(
         padding: const EdgeInsets.all(16.0),
@@ -99,7 +99,7 @@ class _NGOSignupPageState extends State<NGOSignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('NGO Signup'),
+        title: Text('NGO Signup',style: Theme.of(context).textTheme.headlineLarge,),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

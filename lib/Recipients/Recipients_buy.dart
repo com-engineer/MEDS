@@ -30,7 +30,7 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage_Buyer> {
 razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Confirm Order'),
+        title: Text('Confirm Order',style: Theme.of(context).textTheme.headlineLarge,),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: SingleChildScrollView(

@@ -24,7 +24,7 @@ class _DonateMedicinePageState extends State<DonateMedicinePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Donate Medicines'),
+        title: Text('Donate Medicines',style: Theme.of(context).textTheme.headlineLarge,),
  backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(
@@ -149,7 +149,7 @@ class donation_Confirmation_page extends StatelessWidget{
   Widget build(BuildContext context) {
    return Scaffold(
     appBar: AppBar(
-      title:Text("Confirmation page"),
+      title:Text("Confirmation page",style: Theme.of(context).textTheme.headlineLarge,),
        backgroundColor: Theme.of(context).colorScheme.primary,
     ),
     body:Padding(

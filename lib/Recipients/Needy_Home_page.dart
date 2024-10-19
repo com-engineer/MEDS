@@ -32,7 +32,7 @@ Needy_Home_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Donated Medicines'),
+        title: Text('Donated Medicines',style: Theme.of(context).textTheme.headlineLarge,),
         backgroundColor: Theme.of(context).colorScheme.primary,
        
       ),

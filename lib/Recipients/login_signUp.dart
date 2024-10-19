@@ -7,7 +7,7 @@ class RecipientsLoginPage extends StatelessWidget{
   Widget build(BuildContext context) {
    return Scaffold(
      appBar: AppBar(
-      title: Text("Recipients Login Page"),
+      title: Text("Recipients Login Page" ,style: Theme.of(context).textTheme.headlineLarge,),
  backgroundColor: Theme.of(context).colorScheme.primary,    ),
     body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -50,7 +50,7 @@ class RecipientsLoginPage extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Not a member? "),
+                Text("Not a member? ",style: Theme.of(context).textTheme.bodyMedium,),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -81,7 +81,7 @@ class RecipientsSignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
-      title: Text("Fill the Registration form"),
+      title: Text("Fill the Registration form",style: Theme.of(context).textTheme.headlineLarge,),
  backgroundColor: Theme.of(context).colorScheme.primary,    ),
       body:Padding(
         padding: const EdgeInsets.all(16.0),

@@ -8,7 +8,7 @@ class RecipientsHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Recipients Home Page'),
+          title: Text('Recipients Home Page',style: Theme.of(context).textTheme.headlineLarge,),
           //  leading: null,
 
           backgroundColor: Theme.of(context).colorScheme.primary,

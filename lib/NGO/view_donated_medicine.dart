@@ -40,7 +40,7 @@ class _ViewDonatedMedicinesPageState extends State<ViewDonatedMedicinesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Donated Medicines'),
+        title: Text('Donated Medicines',style: Theme.of(context).textTheme.headlineLarge,),
         backgroundColor: Theme.of(context).colorScheme.primary,
         // actions: [
         //   IconButton(

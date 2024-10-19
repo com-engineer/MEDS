@@ -8,7 +8,7 @@ class RequestForMedicinesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request for Medicines'),
+        title: Text('Request for Medicines',style: Theme.of(context).textTheme.headlineLarge,),
  backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(
@@ -75,7 +75,7 @@ class Request_Confirmation_Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request Submitted'),
+        title: Text('Request Submitted',style: Theme.of(context).textTheme.headlineLarge,),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Center(
