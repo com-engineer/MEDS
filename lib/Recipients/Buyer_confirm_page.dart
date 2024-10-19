@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Recipients/Buyer_Home_page.dart';
 import 'package:my_first_app/Recipients/Recipients_Home_page.dart';
 
 class BuyerInformationPage extends StatelessWidget {

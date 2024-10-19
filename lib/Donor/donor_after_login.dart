@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Donor/donor_Dashboard.dart';
 import 'package:my_first_app/Donor/seller_Dashboard.dart';
-import 'package:my_first_app/MAIN/main.dart';
+import 'package:my_first_app/main.dart';
 
 class DonorOptionsPage extends StatelessWidget {
   @override
